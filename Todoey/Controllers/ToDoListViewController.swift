@@ -34,26 +34,26 @@ class ToDoListViewController: SwipeTableViewController {
         
         title = selectedCategory!.name
         
-        guard let currentColor = UIColor(contrastingBlackOrWhiteColorOn: UIColor(hexString: colorHex), isFlat: true) else { fatalError() }
+        guard let currentTextColor = UIColor(contrastingBlackOrWhiteColorOn: UIColor(hexString: colorHex), isFlat: true) else { fatalError() }
         
         guard let navBarColor = UIColor(hexString: colorHex) else { fatalError() }
-        navbar.barTintColor = navBarColor
-                
-        tableView.backgroundColor = navBarColor
-                
-        listTitle.rightBarButtonItem?.tintColor = currentColor
+        
+        navbar.barTintColor = navBarColor //navbar background color
+        tableView.backgroundColor = navBarColor //background color of the screen
+        
+        navbar.tintColor = currentTextColor //back button text color
+        
+        listTitle.rightBarButtonItem?.tintColor = currentTextColor //add new item button color "+"
 
-        navbar.tintColor = currentColor
-                
-        navbar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : currentColor]
-        navbar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : currentColor]
+        navbar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : currentTextColor]
+        navbar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : currentTextColor]
             
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.navigationBar.barTintColor = UIColor.white
-        navigationController?.navigationBar.tintColor = UIColor.black
+        navigationController?.navigationBar.barTintColor = UIColor.white //navbar background color
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black]
     }
 
     //MARK: - Tableview Datasource Methods
