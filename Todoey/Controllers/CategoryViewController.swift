@@ -23,6 +23,9 @@ class CategoryViewController: SwipeTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories yet"
+        let color = UIColor(hexString: categories?[indexPath.row].color)
+        cell.backgroundColor = color
+        cell.textLabel?.textColor = UIColor(contrastingBlackOrWhiteColorOn: color, isFlat: true)
         return cell
     }
     
@@ -64,6 +67,7 @@ class CategoryViewController: SwipeTableViewController {
             } else {
                 let newCategory = Category()
                 newCategory.name = textFieldValue.text!
+                newCategory.color = UIColor.randomFlat()?.hexValue() ?? "#A38570"
                 self.save(category: newCategory)
             }
         }
