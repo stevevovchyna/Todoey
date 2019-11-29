@@ -8,7 +8,7 @@ Cells are deleted with SwipeCellKit
 Colors are managed with CharmeleonFramework
 
 ![Screenshot 1](https://cdn-std.droplr.net/files/acc_158506/mbA6HR)
-![Screenshot 2](https://cdn-std.droplr.net/files/acc_158506/mbA6HR)
+![Screenshot 2](https://cdn-std.droplr.net/files/acc_158506/sPv6fd)
 ![Screenshot 3](https://cdn-std.droplr.net/files/acc_158506/ZzELam)
 
 
